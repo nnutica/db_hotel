@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member",
+      "mappedBy": "booking"
+    },
+    "roomID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::room.room"
+    },
+    "Checkin": {
+      "type": "date"
+    },
+    "Checkout": {
+      "type": "date"
+    },
+    "Guest": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "max": 5,
+      "min": 1
+    },
+    "BookStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Confirmed",
+        "Cancelled"
+      ]
+    }
+  }
+}

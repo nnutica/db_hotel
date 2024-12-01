@@ -24,6 +24,12 @@
     },
     "Password": {
       "type": "password"
+    },
+    "booking": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::booking.booking",
+      "inversedBy": "members"
     }
   }
 }
